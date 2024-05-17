@@ -30,8 +30,8 @@ jobs:
         settings-path: ${{ github.workspace }} # location for the settings.xml file
 
     - name: Postgres Setup
-      run: docker compose -f docker-compose-db.yml up -d
-      
+      run: docker compose -f docker-compose-db.yaml up -d
+
     - name: Build with Maven
       run: mvn -B package --file pom.xml
 
