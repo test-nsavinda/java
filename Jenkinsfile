@@ -16,7 +16,7 @@ pipeline {
 
             agent{
                 docker {
-                    image "openjdk:21"
+                    image "openjdk:23-jdk-bookworm"
                     reuseNode true
                 }
             }
