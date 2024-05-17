@@ -1,0 +1,56 @@
+version: '1.0'
+services:
+  postgres1:
+    image: postgres:16-alpine
+    container_name: ps_product_db
+    restart: always
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_DB: product_db
+    ports:
+      - 5701:5432
+    volumes:
+      - ./docker-data/postgres-data1:/var/lib/postgresql@16/data
+    networks:
+      - ps-network
+
+  postgres2:
+    image: postgres:16-alpine
+    container_name: ps_order_db
+    restart: always
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_DB: order_db
+    ports:
+        - 5702:5432
+    volumes:
+        - ./docker-data/postgres-data2:/var/lib/postgresql@16/data
+    networks:
+        - ps-network
+
+  pgadmin:
+    image: dpage/pgadmin4
+    container_name: ps_product-pgadmin
+    restart: always
+    environment:
+
+      PGADMIN_DEFAULT_EMAIL: admin@project.summit
+      PGADMIN_DEFAULT_PASSWORD: admin
+    ports:
+      - 5711:80
+    volumes:
+      - ./db_servers.json:/pgadmin4/servers.json
+
+    networks:
+      - ps-network
+    depends_on:
+      - postgres1
+      - postgres2
+
+
+networks:
+  ps-network:
+    driver: bridge
+

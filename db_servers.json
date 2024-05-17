@@ -1,0 +1,44 @@
+{
+  "Servers": {
+    "1": {
+      "Name": "Product_DB_Server",
+      "Group": "Servers",
+      "Host": "postgres",
+      "Port": 5432,
+      "MaintenanceDB": "product_db",
+      "Username": "postgres",
+      "Password": "postgres",
+      "SSLMode": "prefer",
+      "SSLCompression": 0,
+      "Timeout": 10,
+      "UseSSHTunnel": 0,
+      "TunnelPort": "",
+      "TunnelAuthentication": 0,
+      "TunnelPassword": "",
+      "TunnelPrivateKey": "",
+      "TunnelUsername": "",
+      "TunnelHost": "",
+      "TunnelTimeout": 10
+    },
+    "2": {
+      "Name": "Order_DB_Server",
+      "Group": "Servers",
+      "Host": "postgres",
+      "Port": 5432,
+      "MaintenanceDB": "order_db",
+      "Username": "postgres",
+      "Password": "postgres",
+      "SSLMode": "prefer",
+      "SSLCompression": 0,
+      "Timeout": 10,
+      "UseSSHTunnel": 0,
+      "TunnelPort": "",
+      "TunnelAuthentication": 0,
+      "TunnelPassword": "",
+      "TunnelPrivateKey": "",
+      "TunnelUsername": "",
+      "TunnelHost": "",
+      "TunnelTimeout": 10
+    }
+  }
+}
